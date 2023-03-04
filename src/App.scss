@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Work Sans", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+@font-face {
+  font-family: "Avenir";
+  src: local(AvenirNextLTPro-Regular),
+    url("./assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+}

@@ -1,0 +1,6 @@
+import axios from "axios";
+
+export const api = axios.create({
+  baseURL:
+    "https://www.google.com/url?q=https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/",
+});

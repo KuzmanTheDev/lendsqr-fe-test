@@ -1,0 +1,85 @@
+@use "../../../mixin.scss" as mixin;
+
+.header {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 283px;
+  right: 0;
+  z-index: 2;
+  background-color: white;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  @include mixin.large_laptop {
+    padding: 30px 60px;
+  }
+}
+
+.header__left,
+.header__right,
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.search__input_wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  padding-left: 20px;
+  border: 1px solid rgba(84, 95, 125, 0.15);
+  border-radius: 8px;
+
+  input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 12px 0 12px 0;
+    font-family: Work Sans;
+    &::placeholder {
+      color: mixin.$soft-grey;
+      opacity: 0.7;
+      font-size: 14px;
+    }
+  }
+  @include mixin.large_laptop {
+    width: 400px;
+  }
+
+  button {
+    width: 56px;
+    padding: 13px 20px;
+    background: mixin.$green;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}
+
+.notification {
+  margin: 0 30px 0 50px;
+}
+.docs__link {
+  color: mixin.$blue;
+  font-size: 16px;
+  font-family: Roboto;
+  text-decoration: underline;
+}
+
+.user__name {
+  margin: 0 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: mixin.$blue;
+}
+
+.dropdown {
+  background: none;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}

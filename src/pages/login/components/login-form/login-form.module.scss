@@ -1,0 +1,85 @@
+@use "../../../../mixin.scss" as mixin;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+}
+.h1 {
+  color: mixin.$blue;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 54.64px;
+  margin-bottom: 10px;
+}
+.description {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27.32px;
+  margin-bottom: 60px;
+  color: mixin.$soft-grey;
+  font-family: Avenir;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.field__wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.field {
+  height: 50px;
+  border: 2px solid rgba(84, 95, 125, 0.15);
+  border-radius: 5px;
+  color: black;
+  font-family: Avenir;
+  display: flex;
+
+  input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 17px 16px 12.5px;
+    border-radius: 2px;
+
+    &::placeholder {
+      color: mixin.$soft-grey;
+      opacity: 0.6;
+      font-size: 14px;
+    }
+  }
+}
+.error {
+  color: red;
+  font-size: 12px;
+  margin-right: auto;
+}
+.show__button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  color: mixin.$green;
+  margin-right: 17px;
+  font-weight: 600;
+}
+.forgot_password {
+  font-weight: 600;
+  margin-top: 10px;
+  margin-right: auto;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  margin-bottom: 25px;
+  a {
+    color: mixin.$green;
+    text-decoration: none;
+  }
+}

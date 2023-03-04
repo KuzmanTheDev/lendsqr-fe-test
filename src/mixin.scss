@@ -1,0 +1,21 @@
+$blue: #213f7d;
+$green: #39cdcc;
+$soft-grey: #545f7d;
+
+@mixin tablet {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+// @mixin laptop {
+//   @media only screen and (min-width: 1090px) {
+//     @content;
+//   }
+// }
+
+@mixin large_laptop {
+  @media only screen and (min-width: 1110px) {
+    @content;
+  }
+}
