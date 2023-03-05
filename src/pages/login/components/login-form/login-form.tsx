@@ -86,8 +86,8 @@ export const LoginForm = () => {
           </small>
         </div>
 
-        <Link to="/">
-          <span className={styles.forgot_password}>FORGOT PASSWORD?</span>
+        <Link to="/" className={styles.forgot__password_wrapper}>
+          <span className={styles.forgot__password}>FORGOT PASSWORD?</span>
         </Link>
 
         <PrimaryButton type="submit" spacing="0.1em">

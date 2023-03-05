@@ -1,0 +1,39 @@
+@use "../../../../mixin.scss" as mixin;
+
+.analytics {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+  width: 100%;
+  margin-bottom: 40px;
+  :last-child {
+    margin-right: 0;
+  }
+}
+
+.card {
+  width: 25%;
+  padding: 20px 10px 30px 30px;
+  height: 160px;
+  background: #ffffff;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  margin-right: 25px;
+}
+
+.card__icon {
+  margin-bottom: 14px;
+}
+
+.card__title {
+  font-size: 14px;
+  font-weight: 500;
+  color: mixin.$soft-grey;
+  margin-bottom: 12px;
+}
+.card__value {
+  font-size: 24px;
+  font-weight: 600;
+  color: mixin.$blue;
+}

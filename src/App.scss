@@ -14,3 +14,20 @@ a {
   src: local(AvenirNextLTPro-Regular),
     url("./assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
 }
+
+::-webkit-scrollbar {
+  width: 7px;
+  // height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(242, 240, 240);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b8bbbe;
+  border-radius: 3px;
+}
+.widget-scroll::-webkit-scrollbar {
+  display: none;
+}

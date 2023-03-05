@@ -1,0 +1,15 @@
+@use "../../mixin.scss" as mixin;
+
+.container {
+  padding: 60px 30px 30px;
+  @include mixin.large_laptop {
+    padding: 60px 60px 30px;
+  }
+}
+
+.h1 {
+  font-weight: 500;
+  font-size: 24px;
+  color: mixin.$blue;
+  margin-bottom: 40px;
+}

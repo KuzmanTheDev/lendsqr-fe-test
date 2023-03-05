@@ -1,0 +1,25 @@
+@use "../../../../mixin.scss" as mixin;
+
+.menu {
+  position: absolute;
+  z-index: 2;
+  bottom: 5px;
+  width: 180px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid rgba(84, 95, 125, 0.04);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+}
+
+.menu__item {
+  display: flex;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: mixin.$soft-grey;
+  cursor: pointer;
+  &:hover {
+    background: rgba(33, 63, 125, 0.1);
+  }
+}

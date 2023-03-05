@@ -1,19 +1,14 @@
 @use "../../../mixin.scss" as mixin;
 
 .header {
-  padding: 30px;
+  padding: 26px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 283px;
-  right: 0;
-  z-index: 2;
   background-color: white;
   box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
   @include mixin.large_laptop {
-    padding: 30px 60px;
+    padding: 26px 60px;
   }
 }
 
@@ -53,7 +48,6 @@
     padding: 13px 20px;
     background: mixin.$green;
     border: none;
-    outline: none;
     cursor: pointer;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;

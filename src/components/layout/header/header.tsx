@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./header.module.scss";
 import search from "assets/icons/search.svg";
-import notification from "assets/icons/Vector.svg";
+import notification from "assets/images/notification-bell.png";
 import dropdown from "assets/icons/dropdown.svg";
 import avatar from "assets/images/avatar.png";
 

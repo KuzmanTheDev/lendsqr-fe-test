@@ -6,22 +6,22 @@
   left: 0;
   bottom: 0;
   width: 283px;
-  background: #fff;
+  background: white;
+  height: 100vh;
+  overflow-y: auto;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
 
   button {
     border: none;
-    outline: none;
     cursor: pointer;
     background: none;
     font-size: 16px;
     font-family: Work Sans;
   }
 }
-
 .logo__container {
   display: flex;
-  margin: 35px 30px;
+  margin: 35px 30px 74px;
   .logo {
     margin: 1px 10px 0 0;
   }
@@ -29,10 +29,37 @@
 .switch {
   display: flex;
   align-items: center;
-  margin: 0 30px;
+  margin: 0 30px 50px;
+  span {
+    display: flex;
+  }
 }
-
 .switch__text {
   margin: 0 10px;
   color: mixin.$blue;
+}
+.nav__link {
+  color: mixin.$blue;
+  display: flex;
+  align-items: center;
+  opacity: 0.7;
+  padding: 10px 30px;
+  span {
+    display: flex;
+  }
+}
+.nav__link--active {
+  opacity: 1;
+}
+.nav__link_text {
+  margin: 0 10px;
+}
+.nav__sub_header {
+  margin: 40px 0 10px 30px;
+  color: mixin.$soft-grey;
+  font-size: 12px;
+  font-weight: 500;
+}
+.sub__nav {
+  margin-bottom: 8px;
 }

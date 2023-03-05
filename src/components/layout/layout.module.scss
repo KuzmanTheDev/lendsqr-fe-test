@@ -1,0 +1,20 @@
+.authenticated__layout {
+  overflow-x: hidden;
+}
+
+.wrapper {
+  position: relative;
+  width: calc(100vw - 283px);
+  top: 0;
+  left: 283px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.main {
+  background-color: #fbfbfb;
+  height: 100%;
+}

@@ -35,9 +35,9 @@ interface Education {
 
 export interface User {
   id: string;
-  name: string;
+  userName: string;
   email: string;
-  phone: string;
+  phoneNumber: string;
   createdAt: string;
   lastActiveDate: string;
   orgName: string;
