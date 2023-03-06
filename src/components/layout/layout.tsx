@@ -12,8 +12,6 @@ interface LayoutProps {
 export const Layout = ({ children }: LayoutProps) => {
   const isMobile = useMediaQuery("( max-width: 450px )");
 
-  console.log(isMobile);
-
   return (
     <div className={styles.authenticated__layout}>
       {!isMobile && <Sidebar />}

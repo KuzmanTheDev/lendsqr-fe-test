@@ -52,6 +52,10 @@
   }
 }
 
+.links {
+  margin-bottom: 50px;
+}
+
 .nav__link_wrapper {
   display: flex;
   margin-bottom: 8px;
@@ -70,12 +74,12 @@
   opacity: 0.7;
   padding: 10px 30px;
   &:hover {
-    background: rgb(57 205 204 / 6%);
+    background: rgb(57 205 204 / 7%);
   }
 }
 
 .active {
-  background: rgb(57 205 204 / 6%);
+  background: rgb(57 205 204 / 7%);
 }
 
 .nav__link_icon {
@@ -95,4 +99,36 @@
   color: mixin.$soft-grey;
   font-size: 12px;
   font-weight: 500;
+}
+
+.signout {
+  padding: 20px 30px;
+  border-top: 1px solid rgba(33, 63, 125, 0.2);
+  button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: none;
+    margin-bottom: 40px;
+    border: none;
+    font-size: 16px;
+    font-family: Work Sans;
+    color: mixin.$blue;
+  }
+  .signout__icon {
+    display: flex;
+  }
+  .signout__text {
+    display: none;
+    margin: 0 10px;
+    @include mixin.large_laptop {
+      display: flex;
+    }
+  }
+}
+
+.version {
+  color: mixin.$blue;
+  font-size: 12px;
+  font-weight: 400;
 }

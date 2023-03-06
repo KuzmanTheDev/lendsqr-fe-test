@@ -14,26 +14,29 @@ export const Users = () => {
   const isTabletOrMobile = useMediaQuery("( max-width: 768px )");
 
   const [numberOfRows, setNumberOfRows] = useState<number>(10);
-  // const [pageCount, setPageCount] = useState<number>(0);
+  const [itemOffset, setItemOffset] = useState<number>(0);
+  const [pageCount, setPageCount] = useState<number>(0);
   // const [filtering, setFiltering] = useState<boolean>(false);
   const [displayedUsers, setDisplayedUsers] = useState<User[]>();
+
+  const endOffset = itemOffset + numberOfRows;
 
   const { isLoading, data } = useQuery(
     ["users"],
     () => UserService.getUsers(),
     {
       onSuccess: (data) => {
-        setDisplayedUsers(() => data?.slice(0, numberOfRows));
-        // setPageCount(Math.ceil(data.length / 10));
+        setDisplayedUsers(() => data.slice(itemOffset, endOffset));
+        setPageCount(Math.ceil(data.length / 10));
       },
     }
   );
 
   useEffect(() => {
     if (data) {
-      setDisplayedUsers(() => data?.slice(0, numberOfRows));
+      setDisplayedUsers(() => data?.slice(itemOffset, endOffset));
     }
-  }, [data, numberOfRows]);
+  }, [data, endOffset, itemOffset, numberOfRows]);
 
   return (
     <div className={styles.container}>
@@ -50,9 +53,13 @@ export const Users = () => {
       {data && (
         <Pagination
           users={data}
+          pageCount={pageCount}
           numberOfRows={numberOfRows}
+          itemOffset={itemOffset}
           setNumberOfRows={setNumberOfRows}
           setDisplayedUsers={setDisplayedUsers}
+          setItemOffset={setItemOffset}
+          setPageCount={setPageCount}
         />
       )}
     </div>

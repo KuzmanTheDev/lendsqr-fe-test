@@ -1,12 +1,14 @@
+import { NavLink } from "react-router-dom";
 import logo from "assets/icons/logo.svg";
 import lendsqr from "assets/images/lendsqr.png";
 import dropdown from "assets/icons/chevron-down.svg";
+import signout from "assets/icons/sign-out.svg";
 import home from "assets/icons/home.svg";
 import styles from "./sidebar.module.scss";
-import { NavLink } from "react-router-dom";
 import { CustomerSubNav } from "components/layout/sidebar/subnav-links/customer-subnav";
 import { BriefcaseIcon } from "assets/icons/briefcase";
 import { BusinessSubNav } from "components/layout/sidebar/subnav-links/business-subnav";
+import { SettingsSubNav } from "components/layout/sidebar/subnav-links/settings-subnav";
 
 export const Sidebar = () => {
   return (
@@ -71,11 +73,7 @@ export const Sidebar = () => {
 
           {BusinessSubNav.map(({ name, icon }, index) => (
             <NavLink to="/" className={styles.nav__link_wrapper} key={index}>
-              <div
-                className={`${styles.nav__link} ${
-                  name === "Users" && styles.active
-                }`}
-              >
+              <div className={styles.nav__link}>
                 <span className={styles.nav__link_icon} title={name}>
                   {icon}
                 </span>
@@ -84,6 +82,34 @@ export const Sidebar = () => {
             </NavLink>
           ))}
         </div>
+
+        <div>
+          <div className={styles.nav__sub_header}>
+            <span>SETTINGS</span>
+          </div>
+
+          {SettingsSubNav.map(({ name, icon }, index) => (
+            <NavLink to="/" className={styles.nav__link_wrapper} key={index}>
+              <div className={styles.nav__link}>
+                <span className={styles.nav__link_icon} title={name}>
+                  {icon}
+                </span>
+                <span className={styles.nav__link_text}>{name}</span>
+              </div>
+            </NavLink>
+          ))}
+        </div>
+      </div>
+
+      <div className={styles.signout}>
+        <button>
+          <span className={styles.signout__icon}>
+            <img src={signout} alt="Exit" />
+          </span>
+          <span className={styles.signout__text}>Logout</span>
+        </button>
+
+        <span className={styles.version}>v1.2.0</span>
       </div>
     </aside>
   );

@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 0 40px;
+  margin: 25px 0 80px;
 }
 .select__rows {
   display: flex;
@@ -40,7 +40,7 @@
     font-family: Work Sans;
     color: mixin.$blue;
     &:hover {
-      background: rgba(33, 63, 125, 0.1);
+      background: rgb(57 205 204 / 7%);
     }
     background: none;
     border: none;
@@ -49,11 +49,48 @@
 .select__rows_options.active {
   display: flex;
   flex-direction: column;
+  position: absolute;
+  //   top: 20px;
+  right: 70px;
+  z-index: 2;
   margin: 5px auto 0;
-  width: 50%;
+  width: 100px;
   background: #ffffff;
   border: 1px solid rgba(33, 63, 125, 0.06);
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
   border-radius: 4px;
   padding: 10px 0;
+}
+.pagination ul {
+  display: flex;
+  align-items: center;
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  li {
+    list-style: none;
+    margin: 0 10px;
+  }
+  .previous,
+  .next {
+    padding: 5px 10px;
+    background: rgba(33, 63, 125, 0.1);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover {
+      background: rgba(33, 63, 125, 0.2);
+    }
+  }
+  .active {
+    font-weight: 500;
+    opacity: 1 !important;
+    color: mixin.$soft-grey;
+  }
+  .page__link {
+    font-weight: 500;
+    opacity: 0.6;
+    color: mixin.$soft-grey;
+  }
 }
