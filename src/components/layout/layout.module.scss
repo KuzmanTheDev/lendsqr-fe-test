@@ -1,17 +1,27 @@
+@use "../../mixin.scss" as mixin;
+
 .authenticated__layout {
   overflow-x: hidden;
 }
 
 .wrapper {
   position: relative;
-  width: calc(100vw - 283px);
+  width: 100%;
   top: 0;
-  left: 283px;
+  left: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
+  @include mixin.tablet {
+    width: calc(100vw - 125px);
+    left: 125px;
+  }
+  @include mixin.large_laptop {
+    width: calc(100vw - 283px);
+    left: 283px;
+  }
 }
 
 .main {

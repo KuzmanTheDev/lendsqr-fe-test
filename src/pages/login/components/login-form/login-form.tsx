@@ -15,10 +15,6 @@ interface MyRegisterOptions {
 const registerOptions: MyRegisterOptions = {
   email: {
     required: "Email is required",
-    pattern: {
-      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-      message: "Invalid email address",
-    },
   },
   password: {
     required: "Password is required",
@@ -90,7 +86,7 @@ export const LoginForm = () => {
           <span className={styles.forgot__password}>FORGOT PASSWORD?</span>
         </Link>
 
-        <PrimaryButton type="submit" spacing="0.1em">
+        <PrimaryButton height="48px" type="submit" spacing="0.1em">
           LOG IN
         </PrimaryButton>
       </form>

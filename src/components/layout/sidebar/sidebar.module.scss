@@ -5,11 +5,15 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 283px;
+  width: 125px;
   background: white;
   height: 100vh;
   overflow-y: auto;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease-in-out;
+  @include mixin.large_laptop {
+    width: 283px;
+  }
 
   button {
     border: none;
@@ -19,47 +23,76 @@
     font-family: Work Sans;
   }
 }
+
 .logo__container {
   display: flex;
   margin: 35px 30px 74px;
   .logo {
     margin: 1px 10px 0 0;
   }
+  .lendsqr {
+    display: none;
+    @include mixin.large_laptop {
+      display: flex;
+    }
+  }
 }
+
 .switch {
   display: flex;
   align-items: center;
   margin: 0 30px 50px;
-  span {
-    display: flex;
+  .switch__text {
+    margin: 0 10px;
+    color: mixin.$blue;
+    display: none;
+    @include mixin.large_laptop {
+      display: flex;
+    }
   }
 }
-.switch__text {
-  margin: 0 10px;
-  color: mixin.$blue;
+
+.nav__link_wrapper {
+  display: flex;
+  margin-bottom: 8px;
 }
+
+.nav__link_flag {
+  width: 3px;
+  background: mixin.$green;
+}
+
 .nav__link {
   color: mixin.$blue;
+  width: 100%;
   display: flex;
   align-items: center;
   opacity: 0.7;
   padding: 10px 30px;
-  span {
+  &:hover {
+    background: rgb(57 205 204 / 6%);
+  }
+}
+
+.active {
+  background: rgb(57 205 204 / 6%);
+}
+
+.nav__link_icon {
+  display: flex;
+}
+
+.nav__link_text {
+  margin: 0 10px;
+  display: none;
+  @include mixin.large_laptop {
     display: flex;
   }
 }
-.nav__link--active {
-  opacity: 1;
-}
-.nav__link_text {
-  margin: 0 10px;
-}
+
 .nav__sub_header {
   margin: 40px 0 10px 30px;
   color: mixin.$soft-grey;
   font-size: 12px;
   font-weight: 500;
-}
-.sub__nav {
-  margin-bottom: 8px;
 }

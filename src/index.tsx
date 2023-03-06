@@ -7,8 +7,9 @@ import { BrowserRouter } from "react-router-dom";
 import "@fontsource/work-sans";
 import "@fontsource/roboto";
 import "@fontsource/work-sans/500.css";
-import "@fontsource/work-sans/700.css";
+import "@fontsource/work-sans/600.css";
 import "assets/fonts/AvenirNextLTPro-Regular.otf";
+import { ScrollToTop } from "utils/scrollToTop";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,7 +27,9 @@ root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <App />
+        <ScrollToTop>
+          <App />
+        </ScrollToTop>
       </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>

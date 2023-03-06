@@ -1,0 +1,42 @@
+@use "../../../../mixin.scss" as mixin;
+
+.container {
+  padding: 0 30px;
+  background: #ffffff;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+}
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  h4 {
+    font-weight: 500;
+    font-size: 16px;
+    color: mixin.$blue;
+    margin-bottom: 25px;
+  }
+  .details {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .detail {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    .label {
+      font-size: 14px;
+      font-weight: 400;
+      color: mixin.$soft-grey;
+      margin-bottom: px;
+    }
+    .value {
+      font-size: 16px;
+      font-weight: 500;
+      color: mixin.$soft-grey;
+    }
+  }
+}

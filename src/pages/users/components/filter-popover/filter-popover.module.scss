@@ -1,0 +1,63 @@
+@use "../../../../mixin.scss" as mixin;
+
+.popover {
+  display: flex;
+  flex-direction: column;
+  width: 270px;
+  bottom: 180px;
+  left: 80px;
+  padding: 30px 20px;
+  position: absolute;
+  z-index: 1000;
+  background: white;
+  border: 1px solid rgba(84, 95, 125, 0.14);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+}
+.field__wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  label {
+    font-size: 14px;
+    font-weight: 500;
+    color: mixin.$soft-grey;
+    margin-bottom: 6px;
+  }
+  select {
+    padding: 12px 18px;
+    border: 1px solid rgb(33 64 125 / 20%);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(75, 74, 74);
+    font-family: Work Sans;
+    &:focus {
+      outline: none;
+      border: 1px solid #39cdcc;
+    }
+  }
+  input {
+    padding: 12px 18px;
+    border: 1px solid rgb(33 64 125 / 20%);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(75, 74, 74);
+    font-family: Work Sans;
+    &::placeholder {
+      color: mixin.$soft-grey;
+      opacity: 0.7;
+    }
+    &:focus {
+      outline: none;
+      border: 1px solid #39cdcc;
+    }
+  }
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}

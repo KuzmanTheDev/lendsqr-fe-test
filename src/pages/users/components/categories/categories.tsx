@@ -1,9 +1,9 @@
-import { Data } from "pages/users/components/analytics/data";
-import styles from "./analytics.module.scss";
+import { Data } from "pages/users/components/categories/data";
+import styles from "./categories.module.scss";
 
-export const Analytics = () => {
+export const Categories = () => {
   return (
-    <div className={styles.analytics}>
+    <div className={styles.categories}>
       {Data.map(({ title, value, icon }, index) => (
         <div className={styles.card} key={index}>
           <div className={styles.card__icon}>

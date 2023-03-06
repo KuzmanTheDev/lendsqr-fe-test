@@ -12,8 +12,8 @@ export class UserService {
     }
   }
 
-  public static async getUserDetail(id: string): Promise<User> {
-    const response = await fetch(endpoints.userDetail(id));
-    return response.json();
+  public static async getUser(id: string): Promise<User> {
+    const response = await api.get(endpoints.userDetail(id));
+    return response.data as User;
   }
 }

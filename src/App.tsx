@@ -4,7 +4,7 @@ import { NoMatch } from "pages/no-match";
 import { PrivateRoute } from "utils/routes";
 import "./App.scss";
 import { Users } from "pages/users/users";
-import { UserDetails } from "pages/users/[id]";
+import { UserDetails } from "pages/user/user";
 
 function App() {
   return (

@@ -1,59 +1,14 @@
 @use "../../../../mixin.scss" as mixin;
 
-.table {
-  width: 100%;
-  padding: 30px;
-  background: #ffffff;
-  border: 1px solid rgba(33, 63, 125, 0.06);
-  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-  border-radius: 4px;
-}
-.thead tr {
-  margin-bottom: 20px;
-}
-.th {
-  font-size: 12px;
-  font-weight: 600;
-  text-align: left;
-  color: mixin.$soft-grey;
-  white-space: nowrap;
-  div {
-    display: flex;
-  }
-}
-.filter {
-  padding-top: 3px;
-  margin-left: 10px;
-}
-.tbody {
-  color: mixin.$soft-grey;
-  tr td {
-    font-size: 14px;
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(33, 63, 125, 0.1);
-  }
-}
-.action {
-  button {
-    display: flex;
-    padding: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-}
-
-.footer {
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 20px 0 40px;
 }
-
 .select__rows {
   display: flex;
   align-items: center;
-
   span {
     color: mixin.$soft-grey;
     font-size: 14px;
@@ -75,22 +30,27 @@
     margin-left: 20px;
   }
 }
-
 .select__rows_options {
   display: none;
-  span {
+  button {
     padding: 5px 10px;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Work Sans;
+    color: mixin.$blue;
     &:hover {
       background: rgba(33, 63, 125, 0.1);
     }
+    background: none;
+    border: none;
   }
 }
 .select__rows_options.active {
   display: flex;
   flex-direction: column;
   margin: 5px auto 0;
-  width: 60%;
+  width: 50%;
   background: #ffffff;
   border: 1px solid rgba(33, 63, 125, 0.06);
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);

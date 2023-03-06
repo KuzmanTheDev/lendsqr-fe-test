@@ -14,6 +14,10 @@
   font-size: 40px;
   line-height: 54.64px;
   margin-bottom: 10px;
+  text-align: center;
+  @include mixin.laptop {
+    text-align: start;
+  }
 }
 .description {
   font-weight: 400;
@@ -22,6 +26,10 @@
   margin-bottom: 60px;
   color: mixin.$soft-grey;
   font-family: Avenir;
+  text-align: center;
+  @include mixin.laptop {
+    text-align: start;
+  }
 }
 
 .form {
@@ -76,6 +84,7 @@
 
 .forgot__password_wrapper {
   margin-bottom: 25px;
+  width: fit-content;
 }
 .forgot__password {
   font-weight: 600;

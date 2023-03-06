@@ -3,41 +3,67 @@
 .header {
   padding: 26px 30px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   background-color: white;
   box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  @include mixin.tablet {
+    flex-direction: row;
+    align-items: center;
+  }
   @include mixin.large_laptop {
     padding: 26px 60px;
   }
 }
 
-.header__left,
-.header__right,
+.header__left {
+  display: none;
+  @include mixin.tablet {
+    display: flex;
+  }
+}
+.header__right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .user {
   display: flex;
   align-items: center;
 }
-
+.logo__container {
+  display: flex;
+  margin-bottom: 20px;
+  .logo {
+    margin: 1px 10px 0 0;
+  }
+  .lendsqr {
+    display: flex;
+  }
+}
 .search__input_wrapper {
   display: flex;
   justify-content: space-between;
-  width: 300px;
+  width: 250px;
   padding-left: 20px;
   border: 1px solid rgba(84, 95, 125, 0.15);
   border-radius: 8px;
 
   input {
     border: none;
+    flex-grow: 1;
     outline: none;
     font-size: 14px;
-    padding: 12px 0 12px 0;
+    padding: 12px 0;
     font-family: Work Sans;
     &::placeholder {
       color: mixin.$soft-grey;
       opacity: 0.7;
       font-size: 14px;
     }
+  }
+  @include mixin.laptop {
+    width: 300px;
   }
   @include mixin.large_laptop {
     width: 400px;
@@ -52,6 +78,11 @@
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
   }
+}
+.notification__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .notification {

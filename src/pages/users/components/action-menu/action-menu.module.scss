@@ -2,24 +2,40 @@
 
 .menu {
   position: absolute;
-  z-index: 2;
-  bottom: 5px;
+  z-index: 1000;
+  right: 5px;
+  top: 40px;
   width: 180px;
-  padding: 20px;
+  padding: 10px 0;
   background: #ffffff;
   border: 1px solid rgba(84, 95, 125, 0.04);
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
   border-radius: 4px;
+  button {
+    padding: 10px 20px !important;
+    width: 100%;
+    background: none;
+    border: none;
+  }
 }
 
 .menu__item {
   display: flex;
+  align-items: center;
   padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  font-family: Work Sans;
   font-size: 14px;
   font-weight: 500;
   color: mixin.$soft-grey;
   cursor: pointer;
   &:hover {
-    background: rgba(33, 63, 125, 0.1);
+    background: rgb(57 205 204 / 6%);
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  span {
+    margin-right: 10px;
   }
 }

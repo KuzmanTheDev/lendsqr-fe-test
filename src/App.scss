@@ -5,6 +5,7 @@
 }
 body {
   font-family: "Work Sans", sans-serif;
+  scroll-behavior: smooth;
 }
 a {
   text-decoration: none;
@@ -17,7 +18,7 @@ a {
 
 ::-webkit-scrollbar {
   width: 7px;
-  // height: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {

@@ -1,0 +1,53 @@
+@use "../../../../../../mixin.scss" as mixin;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 8px 20px 10px;
+  background: #ffffff;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  .date {
+    font-size: 12px;
+    font-weight: 500;
+    font-family: Work Sans;
+    color: mixin.$soft-grey;
+    margin-bottom: 10px;
+  }
+  button {
+    display: flex;
+    padding: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.details__left {
+  display: flex;
+  flex-direction: column;
+  span {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Work Sans;
+    color: mixin.$soft-grey;
+    margin-top: 10px;
+  }
+}

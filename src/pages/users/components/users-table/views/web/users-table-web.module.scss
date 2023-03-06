@@ -1,0 +1,52 @@
+@use "../../../../../../mixin.scss" as mixin;
+
+.table {
+  width: 100%;
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+}
+.thead tr {
+  margin-bottom: 20px;
+}
+.th {
+  position: relative;
+}
+.filter {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: Work Sans;
+  color: mixin.$soft-grey;
+  img {
+    margin-left: 10px;
+    padding-top: 3px;
+  }
+}
+.tbody {
+  color: mixin.$soft-grey;
+  tr td {
+    font-size: 14px;
+    position: relative;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+  }
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
+.action {
+  button {
+    display: flex;
+    padding: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
