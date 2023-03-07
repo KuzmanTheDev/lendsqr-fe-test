@@ -12,8 +12,12 @@ export class UserService {
     }
   }
 
-  public static async getUser(id: string): Promise<User> {
-    const response = await api.get(endpoints.userDetail(id));
-    return response.data as User;
+  public static async getUser(id: string) {
+    try {
+      const response = await api.get(endpoints.userDetail(id));
+      return response.data as User;
+    } catch (error) {
+      return Promise.reject(error);
+    }
   }
 }

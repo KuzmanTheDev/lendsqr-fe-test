@@ -9,6 +9,7 @@ import { Loader } from "components/common/loader";
 import { StatusBadge } from "pages/users/components/status-badge/status-badge";
 
 export interface UsersTableProps {
+  error: boolean;
   users: User[] | undefined;
   loading: boolean;
   setFiltering: Dispatch<SetStateAction<boolean>>;
@@ -17,6 +18,7 @@ export interface UsersTableProps {
 export const UsersTableWeb = ({
   users,
   loading,
+  error,
   setFiltering,
 }: UsersTableProps) => {
   const [selected, setSelected] = useState<string>("");
@@ -28,6 +30,10 @@ export const UsersTableWeb = ({
   };
 
   if (loading) return <Loader />;
+
+  if (users?.length === 0) return <p>There are no users</p>;
+
+  if (error) return <p>Something went wrong. Try again</p>;
 
   return (
     <table className={styles.table}>

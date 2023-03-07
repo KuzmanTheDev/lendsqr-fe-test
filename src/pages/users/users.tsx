@@ -21,7 +21,7 @@ export const Users = () => {
 
   const endOffset = itemOffset + numberOfRows;
 
-  const { isLoading, data } = useQuery(
+  const { isLoading, data, isError } = useQuery(
     ["users"],
     () => UserService.getUsers(),
     {
@@ -46,12 +46,14 @@ export const Users = () => {
 
       {isTabletOrMobile ? (
         <UsersTableMobile
+          error={isError}
           loading={isLoading}
           users={displayedUsers}
           setFiltering={setFiltering}
         />
       ) : (
         <UsersTableWeb
+          error={isError}
           loading={isLoading}
           users={displayedUsers}
           setFiltering={setFiltering}

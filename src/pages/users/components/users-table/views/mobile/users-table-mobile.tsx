@@ -7,7 +7,11 @@ import { ActionMenu } from "pages/users/components/action-menu/action-menu";
 import { Loader } from "components/common/loader";
 import { StatusBadge } from "pages/users/components/status-badge/status-badge";
 
-export const UsersTableMobile = ({ users, loading }: UsersTableProps) => {
+export const UsersTableMobile = ({
+  users,
+  loading,
+  error,
+}: UsersTableProps) => {
   const [selected, setSelected] = useState<string>("");
   const [showMore, setShowMore] = useState<boolean>(false);
 
@@ -17,6 +21,10 @@ export const UsersTableMobile = ({ users, loading }: UsersTableProps) => {
   };
 
   if (loading) return <Loader />;
+
+  if (users?.length === 0) return <p>There are no users</p>;
+
+  if (error) return <p>Something went wrong. Try again</p>;
 
   return (
     <div className={styles.container}>
