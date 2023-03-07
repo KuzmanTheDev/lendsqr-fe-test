@@ -28,12 +28,20 @@ const DockItems: DockItem[] = [
     icon: MoreGridIcon(),
   },
 ];
+const activeStyle = {
+  fontWeight: 500,
+  backgroundColor: "transparent",
+};
 
 export const Dock = () => {
   return (
     <div className={styles.container}>
       {DockItems.map((item, index) => (
-        <NavLink to="/users" key={index}>
+        <NavLink
+          to="/users"
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          key={index}
+        >
           <div className={styles.items} key={index}>
             <div className={styles.item__icon}>{item.icon}</div>
             <div className={styles.item__text}>{item.name}</div>

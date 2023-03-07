@@ -10,14 +10,14 @@ export const StatusBadge = () => {
     return status[Math.floor(Math.random() * status.length)];
   }, []);
 
-  const capitalize = (str: string) => {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  };
-
   const currentStatus = useMemo(
     () => generateRandomStatus(),
     [generateRandomStatus]
   );
+
+  const capitalize = (str: string) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
 
   return (
     <div className={`badge ${currentStatus}`}>
