@@ -15,6 +15,11 @@ interface MyRegisterOptions {
 const registerOptions: MyRegisterOptions = {
   email: {
     required: "Email is required",
+    pattern: {
+      // Regex for email validation
+      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+      message: "Invalid email address",
+    },
   },
   password: {
     required: "Password is required",
@@ -30,7 +35,7 @@ export const LoginForm = () => {
     formState: { errors },
   } = useForm<FormInputProps>();
 
-  const onSubmit: SubmitHandler<FormInputProps> = (data) => {
+  const onSubmit: SubmitHandler<FormInputProps> = () => {
     navigate("users");
   };
   return (
