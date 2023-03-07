@@ -91,10 +91,6 @@ export const Pagination = ({
           activeLinkClassName={styles.active}
         />
       </div>
-
-      {/* {filtering && (
-      <FilterPopover setFiltering={setFiltering} data={displayedUsers} />
-    )} */}
     </div>
   );
 };

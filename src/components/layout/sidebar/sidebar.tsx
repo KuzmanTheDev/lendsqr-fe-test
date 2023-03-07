@@ -30,7 +30,7 @@ export const Sidebar = () => {
 
         <span className={styles.switch__text}>Switch Organization</span>
 
-        <span>
+        <span className={styles.switch__dropdown}>
           <img src={dropdown} alt="Dropdown" />
         </span>
       </button>

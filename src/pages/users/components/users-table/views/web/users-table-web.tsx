@@ -55,7 +55,7 @@ export const UsersTableWeb = ({
           <th className={styles.th}>
             <button
               className={styles.filter}
-              // onClick={() => setFiltering((prev) => !prev)}
+              onClick={() => setFiltering((prev) => !prev)}
             >
               EMAIL
               <img src={filter} alt="Filter" />
@@ -65,7 +65,7 @@ export const UsersTableWeb = ({
           <th className={styles.th}>
             <button
               className={styles.filter}
-              // onClick={() => setFiltering((prev) => !prev)}
+              onClick={() => setFiltering((prev) => !prev)}
             >
               PHONE NUMBER <img src={filter} alt="Filter" />
             </button>
@@ -74,7 +74,7 @@ export const UsersTableWeb = ({
           <th className={styles.th}>
             <button
               className={styles.filter}
-              // onClick={() => setFiltering((prev) => !prev)}
+              onClick={() => setFiltering((prev) => !prev)}
             >
               DATE JOINED
               <img src={filter} alt="Filter" />
@@ -84,7 +84,7 @@ export const UsersTableWeb = ({
           <th className={styles.th}>
             <button
               className={styles.filter}
-              // onClick={() => setFiltering((prev) => !prev)}
+              onClick={() => setFiltering((prev) => !prev)}
             >
               STATUS
               <img src={filter} alt="Filter" />

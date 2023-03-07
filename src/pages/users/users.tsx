@@ -7,9 +7,8 @@ import { useEffect, useState } from "react";
 import { User } from "services/models/responses/user/user-model";
 import { UserService } from "services/user-service";
 import { Pagination } from "pages/users/components/pagination/pagination";
-import styles from "./users.module.scss";
 import { FilterPopover } from "pages/users/components/filter-popover/filter-popover";
-import { filter } from "lodash";
+import styles from "./users.module.scss";
 
 export const Users = () => {
   const isTabletOrMobile = useMediaQuery("( max-width: 768px )");
@@ -59,14 +58,7 @@ export const Users = () => {
         />
       )}
 
-      {filtering && (
-        <FilterPopover
-          setDisplayedUsers={setDisplayedUsers}
-          filtering={filtering}
-          displayedUsers={displayedUsers}
-          setFiltering={setFiltering}
-        />
-      )}
+      {filtering && <FilterPopover setFiltering={setFiltering} />}
 
       {data && (
         <Pagination

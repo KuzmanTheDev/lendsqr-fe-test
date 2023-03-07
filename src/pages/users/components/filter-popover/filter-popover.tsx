@@ -1,16 +1,11 @@
 import React from "react";
-import _ from "lodash";
 import { useForm, SubmitHandler, RegisterOptions } from "react-hook-form";
-import { User } from "services/models/responses/user/user-model";
 import styles from "./filter-popover.module.scss";
 import { PrimaryButton } from "components/common/primary-button/primary-button";
 import { SecondaryButton } from "components/common/secondary-button/secondary-button";
 
 interface FilterPopoverProps {
-  filtering: boolean;
-  displayedUsers: User[] | undefined;
   setFiltering: React.Dispatch<React.SetStateAction<boolean>>;
-  setDisplayedUsers: React.Dispatch<React.SetStateAction<User[] | undefined>>;
 }
 interface FormInputProps {
   email: string;
@@ -37,37 +32,11 @@ const registerOptions: MyRegisterOptions = {
   status: {},
 };
 
-//filterObjectSchema
+export const FilterPopover = ({ setFiltering }: FilterPopoverProps) => {
+  const { register, handleSubmit, reset } = useForm<FormInputProps>();
 
-export const FilterPopover = ({
-  displayedUsers,
-  setFiltering,
-  setDisplayedUsers,
-}: FilterPopoverProps) => {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    // formState,
-  } = useForm<FormInputProps>();
-
-  // const onFilter = (data: FormInputProps) => {
-  //   console.log(data);
-  //   const filteredData = _.filter(displayedUsers, {
-  //     userName: data.username,
-  //     email: data.email,
-  //   });
-  //   setDisplayedUsers(filteredData);
-  // };
-
-  const onSubmit: SubmitHandler<FormInputProps> = (data) => {
-    for (let key in data) {
-      if (!data[key as keyof typeof data]) {
-        delete data[key as keyof typeof data];
-      }
-    }
-    // onFilter(data);
-    console.log(data);
+  const onSubmit: SubmitHandler<FormInputProps> = () => {
+    setFiltering(false);
   };
 
   return (

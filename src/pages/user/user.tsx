@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import previous from "assets/icons/go-back.svg";
 import avatar from "assets/icons/avatar.svg";
 import filled_star from "assets/icons/filled-star.svg";
@@ -9,35 +9,33 @@ import { useQuery } from "@tanstack/react-query";
 import { UserService } from "services/user-service";
 import { User } from "services/models/responses/user/user-model";
 import { GeneralDetails } from "pages/user/components/general-details/general-details";
+import { Loader } from "components/common/loader";
 
 export const UserDetails = () => {
   const [user, setUser] = useState<User>();
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   const userDetails = localStorage.getItem(`user_${id}`);
-  //   if (userDetails) {
-  //     setUser(JSON.parse(userDetails));
-  //   } else {
-  //     setUser(undefined);
-  //   }
-  // }, [id]);
-
-  console.log(user);
-
   const { isLoading, data } = useQuery(
     ["user", id],
     () => UserService.getUser(id as string),
     {
-      // enabled: !!user,
+      enabled: !!user,
       onSuccess: (data) => {
         setUser(data);
-        console.log(data);
         localStorage.setItem(`user_${id}`, JSON.stringify(data));
       },
     }
   );
+
+  useEffect(() => {
+    const userDetails = localStorage.getItem(`user_${id}`);
+    if (userDetails) {
+      setUser(JSON.parse(userDetails));
+    }
+  }, [id]);
+
+  if (isLoading) return <Loader />;
 
   return (
     <section className={styles.container}>

@@ -50,6 +50,13 @@
       display: flex;
     }
   }
+  .switch__dropdown {
+    margin-left: 10px;
+    margin-top: -5px;
+    @include mixin.large_laptop {
+      margin: 0;
+    }
+  }
 }
 
 .links {
