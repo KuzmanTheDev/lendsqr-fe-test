@@ -5,6 +5,7 @@ import more from "assets/icons/more.svg";
 import { useState } from "react";
 import { ActionMenu } from "pages/users/components/action-menu/action-menu";
 import { Loader } from "components/common/loader";
+import { StatusBadge } from "pages/users/components/status-badge/status-badge";
 
 export const UsersTableMobile = ({ users, loading }: UsersTableProps) => {
   const [selected, setSelected] = useState<string>("");
@@ -44,8 +45,8 @@ export const UsersTableMobile = ({ users, loading }: UsersTableProps) => {
               <span>{email}</span>
             </div>
 
-            <div className={styles.status}>
-              <span>Inactive</span>
+            <div>
+              <StatusBadge />
             </div>
           </div>
         </div>

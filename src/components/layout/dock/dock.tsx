@@ -2,8 +2,8 @@ import { UserFriendsIcon } from "assets/icons/user-friends";
 import styles from "./dock.module.scss";
 import { UsersIcon } from "assets/icons/users";
 import { SackIcon } from "assets/icons/sack";
-import more from "assets/icons/more-dot-grid.svg";
 import { MoreGridIcon } from "assets/icons/more-dot-grid";
+import { NavLink } from "react-router-dom";
 
 interface DockItem {
   name: string;
@@ -33,10 +33,12 @@ export const Dock = () => {
   return (
     <div className={styles.container}>
       {DockItems.map((item, index) => (
-        <div className={styles.items} key={index}>
-          <div className={styles.item__icon}>{item.icon}</div>
-          <div className={styles.item__text}>{item.name}</div>
-        </div>
+        <NavLink to="/users" key={index}>
+          <div className={styles.items} key={index}>
+            <div className={styles.item__icon}>{item.icon}</div>
+            <div className={styles.item__text}>{item.name}</div>
+          </div>
+        </NavLink>
       ))}
     </div>
   );
