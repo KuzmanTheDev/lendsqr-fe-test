@@ -1,3 +1,5 @@
+@use "../../../mixin.scss" as mixin;
+
 .container {
   position: fixed;
   bottom: 0;
@@ -11,21 +13,22 @@
   padding: 10px 20px;
   z-index: 100;
   box-shadow: 0 -1px 5px 0 rgba(0, 0, 0, 0.1);
-  .dock-item {
+  .items {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 50px;
     height: 50px;
-    .dock-item-icon {
+    .item__icon {
       width: 20px;
       height: 20px;
       margin-bottom: 5px;
     }
-    .dock-item-text {
-      font-size: 12px;
-      color: #666;
+    .item__text {
+      font-size: 14px;
+      font-weight: 500;
+      color: mixin.$soft-grey;
     }
   }
 }

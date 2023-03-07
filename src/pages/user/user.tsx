@@ -53,7 +53,7 @@ export const UserDetails = () => {
         <div className={styles.header__bottom}>
           <h1 className={styles.h1}>User Details</h1>
 
-          <div>
+          <div className={styles.button__wrapper}>
             <button className={styles.blacklist}>BLACKLIST USER</button>
             <button className={styles.activate}>ACTIVATE USER</button>
           </div>

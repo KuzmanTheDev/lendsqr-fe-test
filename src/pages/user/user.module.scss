@@ -1,7 +1,7 @@
 @use "../../mixin.scss" as mixin;
 
 .container {
-  padding: 60px 30px 30px;
+  padding: 30px;
   @include mixin.large_laptop {
     padding: 60px 60px 30px;
   }
@@ -49,27 +49,47 @@
   font-size: 24px;
   color: mixin.$blue;
 }
+.button__wrapper {
+  display: flex;
+  flex-direction: column;
+  @include mixin.tablet {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
 .blacklist {
   border: 1px solid #e4033b;
   color: #e4033b;
-  margin-right: 20px;
+  margin-bottom: 10px;
+  @include mixin.tablet {
+    margin-right: 20px;
+    margin-bottom: 0px;
+  }
 }
 .activate {
   border: 1px solid #39cdcc;
   color: #39cdcc;
 }
 .overview {
-  padding: 30px 0 0 30px;
+  padding: 10px;
   background: #ffffff;
   border: 1px solid rgba(33, 63, 125, 0.06);
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
   border-radius: 4px;
   margin-bottom: 30px;
+  @include mixin.tablet {
+    padding: 30px 0 0 30px;
+  }
 }
 
 .overview__meta {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  @include mixin.laptop {
+    flex-direction: row;
+  }
 }
 .avatar {
   width: 100px;
@@ -85,6 +105,10 @@
 .user__info {
   display: flex;
   align-items: center;
+  width: 100%;
+  @include mixin.laptop {
+    width: auto;
+  }
   .name__block {
     display: flex;
     flex-direction: column;
@@ -102,13 +126,26 @@
   }
 }
 .divider {
-  width: 1px !important;
-  height: 80px;
-  background: mixin.$soft-grey;
-  opacity: 0.2;
-  margin: 0 30px;
+  display: none;
+  @include mixin.laptop {
+    display: block;
+    width: 1px !important;
+    height: 80px;
+    background: mixin.$soft-grey;
+    opacity: 0.2;
+    margin: 0 30px;
+  }
 }
 .tier__block {
+  width: 25%;
+  margin-bottom: 20px;
+  @include mixin.tablet {
+    width: 56%;
+  }
+  @include mixin.laptop {
+    width: auto;
+    margin-bottom: 0px;
+  }
   span {
     font-size: 14px;
     font-weight: 500;
@@ -126,6 +163,13 @@
 .account__block {
   display: flex;
   flex-direction: column;
+  width: 25%;
+  @include mixin.tablet {
+    width: 56%;
+  }
+  @include mixin.laptop {
+    width: auto;
+  }
   .amount {
     font-size: 22px;
     font-weight: 500;
@@ -142,6 +186,8 @@
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
+  overflow-x: auto;
+  white-space: nowrap;
   button {
     padding: 10px 30px;
     border: none;
@@ -160,4 +206,7 @@
     color: mixin.$green;
     border-bottom: 2px solid mixin.$green;
   }
+}
+.tabs::-webkit-scrollbar {
+  display: none;
 }

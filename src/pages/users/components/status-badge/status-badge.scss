@@ -1,0 +1,21 @@
+.badge {
+  border-radius: 100px;
+  padding: 8px 10px;
+  text-align: center;
+}
+.active {
+  color: #39cd62;
+  background-color: rgb(57 205 98 / 6%);
+}
+.blacklisted {
+  color: #e4033b;
+  background-color: rgb(228 3 59 / 6%);
+}
+.inactive {
+  color: #545f7d;
+  background-color: rgb(84 95 125 / 6%);
+}
+.pending {
+  color: #e9b200;
+  background-color: rgb(233 178 0 / 6%);
+}

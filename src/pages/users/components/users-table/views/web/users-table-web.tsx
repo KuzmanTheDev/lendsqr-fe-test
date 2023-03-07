@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { format } from "date-fns";
 import filter from "assets/icons/filter.svg";
 import more from "assets/icons/more.svg";
@@ -6,13 +6,19 @@ import { User } from "services/models/responses/user/user-model";
 import { ActionMenu } from "pages/users/components/action-menu/action-menu";
 import styles from "./users-table-web.module.scss";
 import { Loader } from "components/common/loader";
+import { StatusBadge } from "pages/users/components/status-badge/status-badge";
 
 export interface UsersTableProps {
   users: User[] | undefined;
   loading: boolean;
+  setFiltering: Dispatch<SetStateAction<boolean>>;
 }
 
-export const UsersTableWeb = ({ users, loading }: UsersTableProps) => {
+export const UsersTableWeb = ({
+  users,
+  loading,
+  setFiltering,
+}: UsersTableProps) => {
   const [selected, setSelected] = useState<string>("");
   const [showMore, setShowMore] = useState<boolean>(false);
 
@@ -30,7 +36,7 @@ export const UsersTableWeb = ({ users, loading }: UsersTableProps) => {
           <th className={styles.th}>
             <button
               className={styles.filter}
-              // onClick={() => setFiltering((prev) => !prev)}
+              onClick={() => setFiltering((prev) => !prev)}
             >
               ORGANIZATION <img src={filter} alt="Filter" />
             </button>
@@ -39,7 +45,7 @@ export const UsersTableWeb = ({ users, loading }: UsersTableProps) => {
           <th className={styles.th}>
             <button
               className={styles.filter}
-              // onClick={() => setFiltering((prev) => !prev)}
+              onClick={() => setFiltering((prev) => !prev)}
             >
               USERNAME
               <img src={filter} alt="Filter" />
@@ -91,11 +97,19 @@ export const UsersTableWeb = ({ users, loading }: UsersTableProps) => {
         {users?.map(({ id, email, profile, userName, createdAt }) => (
           <tr key={id}>
             <td>Lendsqr</td>
+
             <td>{userName}</td>
+
             <td>{email}</td>
+
             <td>{profile.phoneNumber}</td>
+
             <td>{format(new Date(createdAt), "MMM dd, yyyy hh:mm a")}</td>
-            <td>Status</td>
+
+            <td>
+              <StatusBadge />
+            </td>
+
             <td className={styles.action}>
               <button onClick={() => onMore(id)}>
                 <img src={more} alt="More" />

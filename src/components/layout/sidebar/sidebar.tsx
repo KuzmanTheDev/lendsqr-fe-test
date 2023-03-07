@@ -12,7 +12,7 @@ import { SettingsSubNav } from "components/layout/sidebar/subnav-links/settings-
 
 export const Sidebar = () => {
   return (
-    <aside className={styles.aside}>
+    <aside role="navigation" className={styles.aside}>
       <div className={styles.logo__container}>
         <div className={styles.logo}>
           <img src={logo} alt="Logo" />

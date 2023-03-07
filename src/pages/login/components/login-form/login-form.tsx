@@ -1,8 +1,8 @@
+import { useState } from "react";
 import { useForm, SubmitHandler, RegisterOptions } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./login-form.module.scss";
 import { PrimaryButton } from "components/common/primary-button/primary-button";
-import { useState } from "react";
 
 interface FormInputProps {
   email: string;

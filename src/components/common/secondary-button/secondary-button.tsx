@@ -12,6 +12,7 @@ export const SecondaryButton = ({
   children,
   height,
   spacing,
+  type,
   onClick,
 }: Props) => {
   return (
@@ -29,6 +30,7 @@ export const SecondaryButton = ({
         fontSize: "14px",
         letterSpacing: spacing || "none",
       }}
+      type={type}
       onClick={onClick}
     >
       {children}
